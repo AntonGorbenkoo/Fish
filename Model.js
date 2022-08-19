@@ -1,3 +1,4 @@
+
 const fs = require('fs').promises;
 class Model {
   constructor(name, score) {
@@ -8,5 +9,7 @@ class Model {
     let dirF =  await fs.readdir('./topics');
     return dirF;
   }
+
 }
+
 module.exports = Model;
