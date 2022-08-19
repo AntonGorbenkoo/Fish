@@ -27,5 +27,19 @@ class View {
     });
   }
 
+  console.log('LALAdfmjhgfdLALA');
+
+  showQuestions(quest, i){
+    return new Promise((resolve, reject) => {
+      const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+      });
+      rl.question((`\n\nВнимание, вопрос:\n\n${quest[i].slice(0,4).join('\n')}\n\n`), (answer) => {
+        resolve(answer);
+        rl.close();
+      });
+    });
+  }
 }
 module.exports = View
