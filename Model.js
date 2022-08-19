@@ -14,11 +14,11 @@ class Model {
   }
 
   async getQuestions(choice) {
-    const theme = await fs.readFile(`${__dirname}/topics/${choice}`);
+    const theme = await fs.readFile(`${__dirname}/topics/${choice}`, 'utf-8');
     const result = [];
     const questions = theme.split('\n');
-    questions.forEach ((el, line) => {
-      if (!(line % 5)) result.push(el);
+    questions.forEach ((el, line, arr) => {
+      if (!(line % 5)) result.push([el, arr[line+1], arr[line+2], arr[line+3], arr[line+4]]);
       return;
     });
     return result;
