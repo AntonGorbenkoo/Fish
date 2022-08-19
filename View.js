@@ -1,6 +1,6 @@
 
 const readline = require('readline');
-const { rawListeners } = require('process');
+
 class View {
   greeting(){
     return new Promise ((res, rej) =>{
@@ -26,5 +26,6 @@ class View {
       });
     });
   }
+
 }
 module.exports = View
