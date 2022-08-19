@@ -27,7 +27,7 @@ class View {
     });
   }
 
-  console.log('LALAdfmjhgfddfghjLALA');
+  console.log('LAla');
 
   showQuestions(quest, i){
     return new Promise((resolve, reject) => {
