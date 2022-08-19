@@ -1,3 +1,4 @@
+
 const fs = require('fs').promises;
 
 class Model {
@@ -23,4 +24,5 @@ class Model {
     return result;
   }
 }
+
 module.exports = Model;

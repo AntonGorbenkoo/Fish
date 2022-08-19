@@ -1,21 +1,27 @@
+const Model = require("./Model");
+const View = require('./View');
+const fs = require('fs').promises;
+
+
 class Controller {
   constructor(model, view) {
     this.model = model
     this.view = view
   }
-
-  run() {
-    // Просим экземпляр класса модели прочитать папку со всеми темами и составить меню.
-    // Попутно передаем метод контроллера this.printTopicsController,
-    // так как нам нужно отправить сформинованное меню на вывод в экземпляр класса view
-    // после того, как завершится асинхронная операция чтения папки
-    // Здесь this.printTopicsController — является callback'ом  
-    this.model.readTopics(this.printTopicsController)
+  async hello(){
+    const name = await this.view.greeting();
+    this.model.name = name;
+    this.run();
   }
 
-  printTopicsController(topicsMenu) {
-    // Тут нужно попросить экземпляр класса view вывести меню пользователю, 
-    // а также дождаться ответа последнего
+  async run() {
+    const themesArray = await this.model.getThemes();
+    this.printTopicsController(themesArray);
+  }
+
+  async printTopicsController(themesArray) {
+    const choiceTopic = await this.view.show(themesArray, this.model.name);
+    
   }
 
   
