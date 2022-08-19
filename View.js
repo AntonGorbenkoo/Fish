@@ -27,6 +27,8 @@ class View {
     });
   }
 
+  console.log('LALALALA');
+
   showQuestions(quest, i){
     return new Promise((resolve, reject) => {
       const rl = readline.createInterface({
