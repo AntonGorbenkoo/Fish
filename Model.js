@@ -1,3 +1,4 @@
+
 const fs = require ('fs').promises;
 class Model {
   constructor() {
@@ -7,3 +8,4 @@ class Model {
 }
 
 module.exports = Model
+
