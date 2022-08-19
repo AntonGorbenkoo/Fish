@@ -27,7 +27,7 @@ class View {
     });
   }
 
-  console.log('LAla');
+  console.log('LAla123');
 
   showQuestions(quest, i){
     return new Promise((resolve, reject) => {
